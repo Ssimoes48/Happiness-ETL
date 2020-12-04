@@ -1,55 +1,55 @@
 CREATE TABLE Countries (
-    country VARCHAR NOT NULL,
-    continent VARCHAR NOT NULL,
-    sub_region VARCHAR NOT NULL,
+    Country VARCHAR NOT NULL,
+    Continent VARCHAR NOT NULL,
+    Sub_Region VARCHAR NOT NULL,
     CONSTRAINT pk_Countries PRIMARY KEY (
-        country
+        Country
      )
 );
 
 CREATE TABLE Population (
-    country VARCHAR NOT NULL,
-    population INT NOT NULL,
-    area INT NOT NULL,
-    population_growth_rate DECIMAL NOT NULL,
-    world_percentage DECIMAL NOT NULL,
+    Country VARCHAR NOT NULL,
+    Population INT NOT NULL,
+    Area INT NOT NULL,
+    Population_Growth_Rate DECIMAL NOT NULL,
+    World_Percentage DECIMAL NOT NULL,
     CONSTRAINT pk_Population PRIMARY KEY (
-        country
+        Country
      )
 );
 
 CREATE TABLE Countries_By_Government (
-    country VARCHAR NOT NULL,
-    govt_type VARCHAR NOT NULL,
-    head_of_state VARCHAR NOT NULL,
-    head_of_government VARCHAR NOT NULL,
+    Country VARCHAR NOT NULL,
+    Govt_Type VARCHAR NOT NULL,
+    Head_of_State VARCHAR NOT NULL,
+    Head_of_Government VARCHAR NOT NULL,
     CONSTRAINT pk_Countries_By_Government PRIMARY KEY (
-        country
+        Country
      )
 );
 
 CREATE TABLE Happiness_Index (
-    happiness_rank VARCHAR NOT NULL,
-    country VARCHAR NOT NULL,
-    happiness_score DECIMAL NOT NULL,
-    gdp_per_capita INT NOT NULL,
-    social_support DECIMAL NOT NULL,
-    healthy_life_expectancy DECIMAL NOT NULL,
-    choice_freedom DECIMAL NOT NULL,
-    generosity DECIMAL NOT NULL,
-    perceptions_of_corruption DECIMAL NOT NULL,
-    year INT NOT NULL,
+    Happiness_Rank VARCHAR NOT NULL,
+    Country VARCHAR NOT NULL,
+    Happiness_Score DECIMAL NOT NULL,
+    Gdp_per_Capita INT NOT NULL,
+    Social_Support DECIMAL NOT NULL,
+    Healthy_Life_Expectancy DECIMAL NOT NULL,
+    Choice_Freedom DECIMAL NOT NULL,
+    Generosity DECIMAL NOT NULL,
+    Perceptions_of_Corruption DECIMAL NOT NULL,
+    Year INT NOT NULL,
     CONSTRAINT pk_Happiness_Index PRIMARY KEY (
-        country, year
+        Country, Year
      )
 );
 
---ALTER TABLE Countries ADD CONSTRAINT fk_Countries_country FOREIGN KEY("country")
---REFERENCES "Population" ("country");
+ALTER TABLE Countries ADD CONSTRAINT fk_Countries_Country FOREIGN KEY("Country")
+REFERENCES "Population" ("Country");
 
---ALTER TABLE "Countries_By_Government" ADD CONSTRAINT "fk_Countries_By_Government_country" FOREIGN KEY("country")
---REFERENCES "Countries" ("country");
+ALTER TABLE "Countries_By_Government" ADD CONSTRAINT "fk_Countries_By_Government_Country" FOREIGN KEY("Country")
+REFERENCES "Countries" ("Country");
 
---ALTER TABLE "Happiness_Index" ADD CONSTRAINT "fk_Happiness_Index_country" FOREIGN KEY("country")
---REFERENCES "Countries" ("country");
+ALTER TABLE "Happiness_Index" ADD CONSTRAINT "fk_Happiness_Index_Country" FOREIGN KEY("Country")
+REFERENCES "Countries" ("Country");
 
