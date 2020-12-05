@@ -1,1 +1,1 @@
-postgres_pwd = "Fijiwater93!"
+postgres_pwd = "postgres"
