@@ -1,34 +1,34 @@
-CREATE TABLE Countries (
+CREATE TABLE countries (
     country VARCHAR NOT NULL,
     continent VARCHAR NOT NULL,
     sub_region VARCHAR NOT NULL,
-    CONSTRAINT pk_Countries PRIMARY KEY (
+    CONSTRAINT pk_countries PRIMARY KEY (
         country
      )
 );
 
-CREATE TABLE Population (
+CREATE TABLE population (
     country VARCHAR NOT NULL,
     population INT NOT NULL,
     area INT NOT NULL,
     population_growth_rate DECIMAL NOT NULL,
     world_percentage DECIMAL NOT NULL,
-    CONSTRAINT pk_Population PRIMARY KEY (
+    CONSTRAINT pk_population PRIMARY KEY (
         country
      )
 );
 
-CREATE TABLE Countries_By_Government (
+CREATE TABLE countries_by_government (
     country VARCHAR NOT NULL,
     govt_type VARCHAR NOT NULL,
     head_of_state VARCHAR NOT NULL,
     head_of_government VARCHAR NOT NULL,
-    CONSTRAINT pk_Countries_By_Government PRIMARY KEY (
+    CONSTRAINT pk_countries_by_government PRIMARY KEY (
         country
      )
 );
 
-CREATE TABLE Happiness_Index (
+CREATE TABLE happiness_index (
     happiness_rank VARCHAR NOT NULL,
     country VARCHAR NOT NULL,
     happiness_score DECIMAL NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE Happiness_Index (
     generosity DECIMAL NOT NULL,
     perceptions_of_corruption DECIMAL NOT NULL,
     year INT NOT NULL,
-    CONSTRAINT pk_Happiness_Index PRIMARY KEY (
+    CONSTRAINT pk_happiness_index PRIMARY KEY (
         country, year
      )
 );
