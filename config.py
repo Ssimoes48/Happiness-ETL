@@ -1,1 +1,0 @@
-postgres_pwd = "postgres"
