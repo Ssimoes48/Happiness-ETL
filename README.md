@@ -94,7 +94,9 @@ To export to `SQL` we used the following code :
 
 ### ERD
 
-To organize our data sets we use an Entity Relationship Diagram (ERD) tool. We created sample tables and linked them on primary keys which included country name. WE then exported he schema into PostgreSQL to create our tables. 
+To organize our data sets we use an `Entity Relationship Diagram` (ERD) tool. We created sample tables and linked them together on their primary key which was Country Name. We then exported he schema into `PostgreSQL` to create our tables.
+
+When creating our schema, we assigned data types to all the columns. These included types like `VARCHAR` if the data was a word or `DECIMAL` if the data was a large number which included a decimal. The ‘Year’ column was assigned as an `INT` since it was only a 4-diget basic number. 
 
 ![ERD](Images/ERD.png)
 
@@ -103,15 +105,25 @@ To organize our data sets we use an Entity Relationship Diagram (ERD) tool. We c
 
 ## Load
 
-Within postgress, we created tables based on our schema. Then we rand the code in jupyter notebook to import our clean database information into the new tables we made in postgress. 
+Within `PgAdmin` , we created tables based on our schema. Then we ran our ` df.to_sql( ) `  in `jupyter notebook` to import our clean database information into the new tables we made in `postgress` . We also assigned the restriction to certain fields NOT to pull the data if the column was `NULL` . 
+
+### Countries Table
 
 ![Countries Table](Images/countries_table.PNG)
 
+### Countries By Government Table
+
 ![Gov Table](Images/gov_table.PNG)
+
+### Population Table
 
 ![Pop Table](Images/pop_table.PNG)
 
+### Happiness Index Table
+
 ![Happiness Table](Images/happiness_table.PNG)
+
+Our schema also included constraints to make sure the data connected between tables correctly and on the `PRIMARY KEY` and `FOREIGN KEY` . 
 
 ![Alter tables](Images/alter_table.PNG)
 
@@ -119,13 +131,25 @@ Within postgress, we created tables based on our schema. Then we rand the code i
 
 Once the data was there, we created specific queries to call datasets. These queries were:
 
+### 1 
+
+Querying the Happiness Score of a country and that country’s government type. This could help show the correlation of a country’s happiness and their government type. To do this, we used an `INNER JOIN` on the happiness_index and countries_by_government tables. We joined them on ‘country’. Because our happiness_index includes 5 years of data, we used the `AVG` function to calculate the average Happiness Score per country so the table only each country 1 time. 
+
 ![Query 1](Images/happy_gov_table.PNG)
+
+### 2 
+
+Querying all of the data in all of the tables. This shows a nice summary by country of Happiness Index and Geopolitical data. To combine all of the tables, we had to do 3 `INNER JOINS` to connect all 4 tables. We also had to `GROUP BY` the country to make the data show only 1 time per country. We used `AVG` to calculate the average of numerical values to the 1 entry per county would be accurate regarding happiness index. We also used `ORDER BY` to sort our data by ‘region’. This helped to group the data in clear way for viewing.  
 
 ![Query 2](Images/all_table.PNG)
 
+### 3
+
+Our 3rd query is similar to our second accept that it uses a `WHERE` clause to only pull data for 1 country. This is the most helpful query if you want a summary of one particular country. 
+
 ![Query 3](Images/united_kingdom_table.PNG)
 
-We felt these were important representations of our data set because they showed the relationship between a country’s happiness index and their geopolitical factors. 
+We felt these were important representations of our data set because they showed the relationship between a country’s happiness index and their geopolitical factors.
 
 ## Run Data
 
