@@ -1,6 +1,6 @@
 ## ELT Project- Happiness Index
 
-![happy faces](happy_faces.PNG)
+![happy faces](Images/happy_faces.PNG)
 
 ## Table of contents
 * [General Info](#general-info)
@@ -15,7 +15,7 @@
 ## General Info
 Are you looking for more information for more information on your target market or a new place to move? We have the database for you. Our database compares the Happiness Index of a country and other Geopolitical factors. 
 
-![World Flag](World_Flag_map.PNG)
+![World Flag](Images/World_Flag_map.PNG)
 
 ## Extract
 
