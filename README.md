@@ -153,23 +153,21 @@ We felt these were important representations of our data set because they showed
 
 ## Run Data
 
-How to recreate our database:
-Clone repo to your desktop. 
-Open PG Admin and import Schema
-Run all of Schema
-Open CSV files notebooks in Jupyter notebook 
-Your conda environment needs the following dependencies to run these notebooks:	
-	sqlalchemy 
-	pandas 
-	psycopg2
-	Config.py file
+### How to recreate our database: 
 
-Run notebooks completely. 
+* Clone repository to your desktop 
 
-User will have to create a file called ‘config.py’ and save it in the main folder of repo. User will need to create a value called ‘postgress_pwd = {password}” whose value is equal to the users postgress password for PG Admin.   
+* Open `PgAdmin` and import `schema.sql` 
 
-Once the tables are populated in PG Admin, you can run our queries. They are saved in a file called query.sql .
+* Run all of `schema`. Make sure you are in your `PythonData` environment in your terminal. Your conda environment needs the following dependencies to run these notebooks: `sqlalchemy` , `pandas` ,  `psycopg2`
 
+* Open CSV files notebooks in Jupyter notebook
+
+* User will have to create a file called ‘config.py’ and save it in the main folder of repository. User will need to create a value called `‘postgress_pwd = {password}”` whose value is equal to the users `postgress password` for `PgAdmin`  
+
+* Run notebooks completely
+
+* Once the tables are populated in `PgAdmin`, run our queries. Queries are saved in file called `query.sql` 
 
 ## Resources 
 
