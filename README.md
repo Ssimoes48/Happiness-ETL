@@ -129,21 +129,21 @@ Our schema also included constraints to make sure the data connected between tab
 
 ## Queries 
 
-Once the data was there, we created specific queries to call datasets. These queries were:
+Once the data was there, we created specific queries to call datasets.
 
-### 1 
+### Query 1 
 
 Querying the Happiness Score of a country and that country’s government type. This could help show the correlation of a country’s happiness and their government type. To do this, we used an `INNER JOIN` on the happiness_index and countries_by_government tables. We joined them on ‘country’. Because our happiness_index includes 5 years of data, we used the `AVG` function to calculate the average Happiness Score per country so the table only each country 1 time. 
 
 ![Query 1](Images/happy_gov_table.PNG)
 
-### 2 
+### Query 2 
 
 Querying all of the data in all of the tables. This shows a nice summary by country of Happiness Index and Geopolitical data. To combine all of the tables, we had to do 3 `INNER JOINS` to connect all 4 tables. We also had to `GROUP BY` the country to make the data show only 1 time per country. We used `AVG` to calculate the average of numerical values to the 1 entry per county would be accurate regarding happiness index. We also used `ORDER BY` to sort our data by ‘region’. This helped to group the data in clear way for viewing.  
 
 ![Query 2](Images/all_table.PNG)
 
-### 3
+### Query 3
 
 Our 3rd query is similar to our second accept that it uses a `WHERE` clause to only pull data for 1 country. This is the most helpful query if you want a summary of one particular country. 
 
