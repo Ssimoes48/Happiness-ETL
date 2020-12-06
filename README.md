@@ -157,17 +157,19 @@ We felt these were important representations of our data set because they showed
 
 * Clone repository to your desktop 
 
-* Open `PgAdmin` and import `schema.sql` 
+* Open `PgAdmin` and import `schema.sql` from ERD folder
 
-* Run all of `schema`. Make sure you are in your `PythonData` environment in your terminal. Your conda environment needs the following dependencies to run these notebooks: `sqlalchemy` , `pandas` ,  `psycopg2`
+* Run all of `schema`. 
 
-* Open CSV files notebooks in Jupyter notebook
+* In terminal, make sure you are in your `PythonData` environment in your terminal. Your conda environment needs the following dependencies to run these notebooks: `sqlalchemy`, `pandas`, `psycopg2` . You can check this by running the code `conda list` in your terminal. 
+
+* Open CSV files notebooks in `Jupyter notebook` located in Data_Cleaning folder
 
 * User will have to create a file called ‘config.py’ and save it in the main folder of repository. User will need to create a value called `‘postgress_pwd = {password}”` whose value is equal to the users `postgress password` for `PgAdmin`  
 
-* Run notebooks completely
+* Run notebooks completely in `Jupyter Notebook`
 
-* Once the tables are populated in `PgAdmin`, run our queries. Queries are saved in file called `query.sql` 
+* Once the tables are populated in `PgAdmin`, run the queries located in file called`query.sql` in ERD folder 
 
 ## Resources 
 
