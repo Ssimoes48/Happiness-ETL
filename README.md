@@ -26,9 +26,10 @@ Our data came from several sources. We pulled CSV files as well as web scraped d
 ## Transform
 We imported our data sets into `Jupyter Notebook` to manipulate and transform our datasets. We had to reformate and clean our CSV files so that they were readable, and the columns were consistent. We did this by renaming columns and comparing country names to ensure all data was callable in our `SQL` queries. We also removed null values in areas that would not have been meaningful.
 
+### Countries Table
+
 Our country csv was a list of country, continent a region. We renamed the columns to be consistent. 
 
-###Countries Table
 ![Country 1](Images/country_jn_1.PNG)
 
 We also `merged` the Country names against a year of our Happiness Index to make sure the data included the same list of countries.
@@ -45,7 +46,7 @@ We saved this database to a csv to use as a master country list in our other dat
 
 ![Country Save](Images/country_csv_save.PNG)
 
-###Government Table
+### Government Table
 
 The government table came from Web Scraping as website that had a list of government types by country. We used the pandas code ` pd.read_html( ) ` to read the data in `jupyter notebook` . 
 
@@ -59,7 +60,7 @@ To export to SQL, we used the below code :
 
 ![Gov SQL](Images/gov_sql_jn.PNG)
 
-###Happiness Index
+### Happiness Index
 
 The Happiness CSVs we found consisted of 5 CSV files over 5 years of time. We decided not to `aggregate` the data in the csv so that could have a record of all 5 years of Happiness Score. 
 
