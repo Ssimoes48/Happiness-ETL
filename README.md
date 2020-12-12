@@ -38,7 +38,7 @@ We also `merged` the Country names against a year of our Happiness Index to make
 
 ![Country Merge](Images/country_jn_merge.PNG)
 
-To export the data to `Postgres` we use the following code including ` df.to_sql( ) ` . Also, we used `if_exists=”append” ` to replace anything in the existing database. 
+To export the data to `Postgres` we use the following code including ` df.to_sql( ) ` . Also, we used `if_exists=”append” ` to add to the existing database without overriding the schema. 
 
 ![Country SQL](Images/country_sql_jn.PNG)
 
@@ -161,13 +161,13 @@ We felt these were important representations of our data set because they showed
 
 * In terminal, make sure your environment has the following dependencies to run these notebooks: `sqlalchemy`, `pandas`, `psycopg2` . You can check this by running the code `conda list` in your terminal. 
 
-* Open each 1.ipynb' notebook in `Jupyter notebook`. The files are located in Data_Cleaning folder
+* Run each notebook in `Jupyter notebook` from the Data_Cleaning folder
 
-* User will have to create a file called ‘config.py’ and save it in the main folder of repository. User will need to create a value called `‘postgress_pwd = {password}”` whose value is equal to the users `postgress password` for `PgAdmin`  
+* Create a file called ‘config.py’ and save it in the main folder of repository. User will need to create a value called `‘postgres_pwd = {password}”` whose value is equal to the users `postgres password` for `PgAdmin`  
 
 * Run each notebook completely in `Jupyter Notebook`
 
-* Once the tables are populated in `PgAdmin`, run the queries located in file called`query.sql` in Schema folder 
+* Once the tables are populated in `PgAdmin`, run the queries located in file called `query.sql` in Schema folder 
 
 ## Resources 
 
