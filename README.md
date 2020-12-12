@@ -1,4 +1,4 @@
-## ELT Project- Happiness Index
+## Happiness Index ETL
 
 ![happy faces](Images/happy_faces.PNG)
 
