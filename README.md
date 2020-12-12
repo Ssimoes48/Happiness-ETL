@@ -4,6 +4,7 @@
 
 ## Table of contents
 * [General Info](#general-info)
+* [Technologies](#technologies) 
 * [Extract](#extract)
 * [Transform](#transform)
 * [Load](#load)
@@ -19,9 +20,31 @@ What is the Happiness Index? It is a rating of a country’s happiness on a scal
 
 ![World Flag](Images/World_Flag_map.PNG)
 
+## Technologies
+
+We used the following technologies:
+
+* Pandas
+
+* PostgreSQL
+
 ## Extract
 
-Our data came from several sources. We pulled CSV files as well as web scraped data. The CSVs were from sources such as Kaggle. The web scraping was from a site about countries that include current government types.  There are 193 countries in the world, however, our main Happiness Index CSV file included 153 counties that were surveyed. All data sets had country name as a common field.
+Our data came from several sources including CSV files and data pulled from web scraping. 
+
+CSV files:
+
+* [Kaggle- Happiness Index](https://www.kaggle.com/unsdsn/world-happiness) : set of 5 separate csv files of Happiness Score and the factors related to final rating ranging over 5 years from 2015-1029
+
+* [Kaggle- Country Codes](https://www.kaggle.com/statchaitya/country-to-continent) : included country name, specific 2-digit country code and region
+
+* [World Population](https://worldpopulationreview.com/) : included data on country population, growth rate from 1970 to 2030 (prediction based of growth rate)
+
+For our government type data, we web scraped the data from the below site:   
+	
+* [Government Types](https://www.mapsofworld.com/thematic-maps/types-of-governments.html) : website had a table of current government type and leadership per country
+
+There are 193 countries in the world, however, our main Happiness Index CSV file included 153 counties that were surveyed. We chose these data sets because they all had the common field of Country Name.
 
 ## Transform
 We imported our data sets into `Jupyter Notebook` to manipulate and transform our datasets. We had to reformate and clean our CSV files so that they were readable, and the columns were consistent. We did this by renaming columns and comparing country names to ensure all data was callable in our `SQL` queries. We also removed null values in areas that would not have been meaningful.
@@ -96,30 +119,14 @@ To export to `Postgres` we used the following code :
 
 To organize our data sets we use an `Entity Relationship Diagram` (ERD)tool from the [Quick Database Diagrams](https://www.quickdatabasediagrams.com/) website. We created sample tables and linked them together on their primary key which was Country Name. We then exported he schema into `Postgres` to create our tables.
 
-When creating our schema, we assigned data types to all the columns. These included types like `VARCHAR` if the data was a word or `DECIMAL` if the data was a large number which included a decimal. The ‘Year’ column was assigned as an `INT` since it was only a 4-diget basic number. 
+When creating our schema, we assigned data types to all the columns based on their values. 
 
 ![ERD](Images/ERD.png)
 
 
 ## Load
 
-Within `PgAdmin` , we created tables based on our schema. Then we ran our ` df.to_sql( ) `  in `jupyter notebook` to import our clean database information into the new tables we made in `postgress` . We also assigned the restriction to certain fields NOT to pull the data if the column was `NULL` . 
-
-### Countries Table
-
-![Countries Table](Images/countries_table.PNG)
-
-### Countries By Government Table
-
-![Gov Table](Images/gov_table.PNG)
-
-### Population Table
-
-![Pop Table](Images/pop_table.PNG)
-
-### Happiness Index Table
-
-![Happiness Table](Images/happiness_table.PNG)
+Within `PgAdmin` , we created tables based on our [schema]( https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/schema.sql). Then we ran our ` df.to_sql( ) `  in `jupyter notebook` to import our clean database information into the new tables we made in `postgress` . We also assigned the restriction to certain fields NOT to pull the data if the column was `NULL` . 
 
 Our schema also included constraints to make sure the data connected between tables correctly and on the `PRIMARY KEY` and `FOREIGN KEY` . 
 
@@ -127,7 +134,7 @@ Our schema also included constraints to make sure the data connected between tab
 
 ## Queries 
 
-Once the data was there, we created specific queries to call datasets.
+After creating the databases, the following are some queries the user may find useful.
 
 ### Query 1 
 
@@ -143,7 +150,7 @@ Querying all of the data in all of the tables. This shows a nice summary by coun
 
 ### Query 3
 
-Our 3rd query is similar to our second accept that it uses a `WHERE` clause to only pull data for 1 country. This is the most helpful query if you want a summary of one particular country. 
+Our 3rd query is like our second accept that it uses a `WHERE` clause to only pull data for 1 country. This is the most helpful query if you want a summary of one country. 
 
 ![Query 3](Images/united_kingdom_table.PNG)
 
@@ -157,17 +164,15 @@ We felt these were important representations of our data set because they showed
 
 * Open `PgAdmin` and import `schema.sql` from Schema folder
 
-* Run all of `schema`. 
+* Run all `[schema]( https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/schema.sql)schema` 
 
-* In terminal, make sure your environment has the following dependencies to run these notebooks: `sqlalchemy`, `pandas`, `psycopg2` . You can check this by running the code `conda list` in your terminal. 
+* Python environment needs the following dependencies to run notebooks: `sqlalchemy`, `pandas`, `psycopg2` 
 
-* Run each notebook in `Jupyter notebook` from the Data_Cleaning folder
+* Within main folder of repository, create a file called ‘config.py’. In config.py file, user will need to create a variable called ` postgres_pwd = {password} ` whose value is equal to the users `postgres password` for `PgAdmin` . User will also need to create a variable for ` postgres_user = {user name} ` for 
 
-* Create a file called ‘config.py’ and save it in the main folder of repository. User will need to create a value called `‘postgres_pwd = {password}”` whose value is equal to the users `postgres password` for `PgAdmin`  
+* Open and run each file in `Jupiter Notebook` 
 
-* Run each notebook completely in `Jupyter Notebook`
-
-* Once the tables are populated in `PgAdmin`, run the queries located in file called `query.sql` in Schema folder 
+* Once the tables are populated in `PgAdmin`, run the queries located in file called ` [query.sql]( https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/query.sql)` in Schema folder 
 
 ## Resources 
 
