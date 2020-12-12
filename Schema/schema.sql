@@ -14,10 +14,11 @@ CREATE TABLE "countries" (
 
 CREATE TABLE "population" (
     "country" VARCHAR   NOT NULL,
-    "population" DECIMAL,
-    "area" INT,
-    "population_growth_rate" DECIMAL,
-    "world_percentage" DECIMAL,
+    "population" DECIMAL   NOT NULL,
+    "area" INT   NOT NULL,
+    "density" DECIMAL   NOT NULL,
+    "population_growth_rate" DECIMAL   NOT NULL,
+    "world_percentage" DECIMAL   NOT NULL,
     CONSTRAINT "pk_population" PRIMARY KEY (
         "country"
      )
