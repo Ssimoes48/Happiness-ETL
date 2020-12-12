@@ -153,7 +153,7 @@ We felt these were important representations of our data set because they showed
 
 ### How to recreate our database: 
 
-* Clone repository to your desktop 
+* Clone [Happiness-ETL](https://github.com/Ssimoes48/Happiness-ETL.git) repository to your desktop 
 
 * Open `PgAdmin` and import [schema.sql](https://github.com/Ssimoes48/Happiness-ETL/blob/main/Schema/schema.sql) from [Schema](https://github.com/Ssimoes48/Happiness-ETL/tree/main/Schema) folder
 
