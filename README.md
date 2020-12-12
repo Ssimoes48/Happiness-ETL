@@ -127,7 +127,7 @@ Our schema also included constraints to make sure the data connected between tab
 
 ## Queries 
 
-After creating the databases, the following are some queries the user may find useful.
+After creating the databases, the following are some [queries](https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/query.sql)  the user may find useful.
 
 ### Query 1 
 
@@ -155,17 +155,17 @@ We felt these were important representations of our data set because they showed
 
 * Clone repository to your desktop 
 
-* Open `PgAdmin` and import `schema.sql` from Schema folder
+* Open `PgAdmin` and import `schema.sql` from [Schema](https://github.com/Ssimoes48/ELT-Project/tree/main/Schema) folder
 
-* Run all [schema](https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/schema.sql)schema 
+* Run all [schema](https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/schema.sql) 
 
 * Python environment needs the following dependencies to run notebooks: `sqlalchemy`, `pandas`, `psycopg2` 
 
-* Within main folder of repository, create a file called ‘config.py’. In config.py file, user will need to create a variable called ` postgres_pwd = {password} ` whose value is equal to the users `postgres password` for `PgAdmin` . User will also need to create a variable for ` postgres_user = {user name} ` for user name in `PgAdmin`
+* Within folder, create a file called ‘config.py’. In config.py file, user will need to create a variable called ` postgres_pwd = {password} ` whose value is equal to the users `postgres password` for `PgAdmin` . User will also need to create a variable for ` postgres_user = {user name} ` for user name in `PgAdmin`
 
 * Open and run each file in `Jupiter Notebook` 
 
-* Once the tables are populated in `PgAdmin`, run the queries located in file called `[query.sql](https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/query.sql)` in Schema folder 
+* Once the tables are populated in `PgAdmin`, run the queries located in file called ` [query.sql](https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/query.sql) ` in Schema](https://github.com/Ssimoes48/ELT-Project/tree/main/Schema) folder
 
 ## Resources 
 
