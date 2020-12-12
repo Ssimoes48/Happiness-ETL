@@ -38,7 +38,7 @@ We also `merged` the Country names against a year of our Happiness Index to make
 
 ![Country Merge](Images/country_jn_merge.PNG)
 
-To export the data to our `PostgreSQL` we use the following code including ` df.to_sql( ) ` . Also, we used `if_exists=”append” ` so that we would not keep adding to our tables in SQL if the table had data in it already. 
+To export the data to `Postgres` we use the following code including ` df.to_sql( ) ` . Also, we used `if_exists=”append” ` to replace anything in the existing database. 
 
 ![Country SQL](Images/country_sql_jn.PNG)
 
@@ -56,7 +56,7 @@ We then cleaned up the column names and `merged` the data with our countries tab
 
 ![Gov 1](Images/gov_jn_1.PNG)
 
-To export to SQL, we used the below code :
+To export to `Postgres`, we used the below code :
 
 ![Gov SQL](Images/gov_sql_jn.PNG)
 
@@ -74,7 +74,7 @@ Once the columns were consistent, we used the `pandas` function ` pd.concat( ) `
 
 ![Clean Happiness DB](Images/clean_csv_jn_final.PNG)
 
-To export the data to `SQL` we used the following code:
+To export the data to `Postgres` we used the following code:
 
 ![Clean Happiness SQL](Images/clean_csv_sql_jn.PNG)
 
@@ -88,13 +88,13 @@ Then we cleaned the data further by renaming the columns to be consistent and cl
 
 ![Pop rename](Images/pop_rename.PNG)
 
-To export to `SQL` we used the following code :
+To export to `Postgres` we used the following code :
 
 ![Pop SQL](Images/pop_sql_jn.PNG)
 
 ### Schema
 
-To organize our data sets we use an `Entity Relationship Diagram` (ERD) tool. We created sample tables and linked them together on their primary key which was Country Name. We then exported he schema into `PostgreSQL` to create our tables.
+To organize our data sets we use an `Entity Relationship Diagram` (ERD)tool from the [Quick Database Diagrams](https://www.quickdatabasediagrams.com/) website. We created sample tables and linked them together on their primary key which was Country Name. We then exported he schema into `Postgres` to create our tables.
 
 When creating our schema, we assigned data types to all the columns. These included types like `VARCHAR` if the data was a word or `DECIMAL` if the data was a large number which included a decimal. The ‘Year’ column was assigned as an `INT` since it was only a 4-diget basic number. 
 
@@ -155,19 +155,19 @@ We felt these were important representations of our data set because they showed
 
 * Clone repository to your desktop 
 
-* Open `PgAdmin` and import `schema.sql` from ERD folder
+* Open `PgAdmin` and import `schema.sql` from Schema folder
 
 * Run all of `schema`. 
 
-* In terminal, make sure you are in your `PythonData` environment in your terminal. Your conda environment needs the following dependencies to run these notebooks: `sqlalchemy`, `pandas`, `psycopg2` . You can check this by running the code `conda list` in your terminal. 
+* In terminal, make sure your environment has the following dependencies to run these notebooks: `sqlalchemy`, `pandas`, `psycopg2` . You can check this by running the code `conda list` in your terminal. 
 
-* Open CSV files notebooks in `Jupyter notebook` located in Data_Cleaning folder
+* Open each 1.ipynb' notebook in `Jupyter notebook`. The files are located in Data_Cleaning folder
 
 * User will have to create a file called ‘config.py’ and save it in the main folder of repository. User will need to create a value called `‘postgress_pwd = {password}”` whose value is equal to the users `postgress password` for `PgAdmin`  
 
-* Run notebooks completely in `Jupyter Notebook`
+* Run each notebook completely in `Jupyter Notebook`
 
-* Once the tables are populated in `PgAdmin`, run the queries located in file called`query.sql` in ERD folder 
+* Once the tables are populated in `PgAdmin`, run the queries located in file called`query.sql` in Schema folder 
 
 ## Resources 
 
