@@ -61,9 +61,6 @@ We also `merged` the Country names against a year of our Happiness Index to make
 
 ![Country Merge](Images/country_jn_merge.PNG)
 
-To export the data to `Postgres` we use the following code including ` df.to_sql( ) ` . Also, we used `if_exists=”append” ` to add to the existing database without overriding the schema. 
-
-![Country SQL](Images/country_sql_jn.PNG)
 
 We saved this database to a csv to use as a master country list in our other data sets for consistency. 
 
@@ -79,9 +76,6 @@ We then cleaned up the column names and `merged` the data with our countries tab
 
 ![Gov 1](Images/gov_jn_1.PNG)
 
-To export to `Postgres`, we used the below code :
-
-![Gov SQL](Images/gov_sql_jn.PNG)
 
 ### Happiness Index
 
@@ -97,9 +91,6 @@ Once the columns were consistent, we used the `pandas` function ` pd.concat( ) `
 
 ![Clean Happiness DB](Images/clean_csv_jn_final.PNG)
 
-To export the data to `Postgres` we used the following code:
-
-![Clean Happiness SQL](Images/clean_csv_sql_jn.PNG)
 
 ### Population Table
 
@@ -111,9 +102,11 @@ Then we cleaned the data further by renaming the columns to be consistent and cl
 
 ![Pop rename](Images/pop_rename.PNG)
 
-To export to `Postgres` we used the following code :
+## Export to Postgres
 
-![Pop SQL](Images/pop_sql_jn.PNG)
+To export the data to `Postgres` we use the following code including ` df.to_sql( ) ` for all notebook. Also, we used `if_exists=”append” ` to add to the existing database without overriding the schema. 
+
+![Country SQL](Images/country_sql_jn.PNG)
 
 ### Schema
 
@@ -126,7 +119,7 @@ When creating our schema, we assigned data types to all the columns based on the
 
 ## Load
 
-Within `PgAdmin` , we created tables based on our [schema]( https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/schema.sql). Then we ran our ` df.to_sql( ) `  in `jupyter notebook` to import our clean database information into the new tables we made in `postgress` . We also assigned the restriction to certain fields NOT to pull the data if the column was `NULL` . 
+Within `PgAdmin` , we created tables based on our [schema](https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/schema.sql). Then we ran our ` df.to_sql( ) `  in `jupyter notebook` to import our clean database information into the new tables we made in `postgress` . We also assigned the restriction to certain fields NOT to pull the data if the column was `NULL` . 
 
 Our schema also included constraints to make sure the data connected between tables correctly and on the `PRIMARY KEY` and `FOREIGN KEY` . 
 
@@ -164,15 +157,15 @@ We felt these were important representations of our data set because they showed
 
 * Open `PgAdmin` and import `schema.sql` from Schema folder
 
-* Run all `[schema]( https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/schema.sql)schema` 
+* Run all [schema](https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/schema.sql)schema 
 
 * Python environment needs the following dependencies to run notebooks: `sqlalchemy`, `pandas`, `psycopg2` 
 
-* Within main folder of repository, create a file called ‘config.py’. In config.py file, user will need to create a variable called ` postgres_pwd = {password} ` whose value is equal to the users `postgres password` for `PgAdmin` . User will also need to create a variable for ` postgres_user = {user name} ` for 
+* Within main folder of repository, create a file called ‘config.py’. In config.py file, user will need to create a variable called ` postgres_pwd = {password} ` whose value is equal to the users `postgres password` for `PgAdmin` . User will also need to create a variable for ` postgres_user = {user name} ` for user name in `PgAdmin`
 
 * Open and run each file in `Jupiter Notebook` 
 
-* Once the tables are populated in `PgAdmin`, run the queries located in file called ` [query.sql]( https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/query.sql)` in Schema folder 
+* Once the tables are populated in `PgAdmin`, run the queries located in file called `[query.sql](https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/query.sql)` in Schema folder 
 
 ## Resources 
 
