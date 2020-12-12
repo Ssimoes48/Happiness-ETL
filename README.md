@@ -165,7 +165,7 @@ We felt these were important representations of our data set because they showed
 
 * Open and run each file in `Jupiter Notebook` 
 
-* Once the tables are populated in `PgAdmin`, run the queries located in file called ` [query.sql](https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/query.sql) ` in Schema](https://github.com/Ssimoes48/ELT-Project/tree/main/Schema) folder
+* Once the tables are populated in `PgAdmin`, run the queries located in file called [query.sql](https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/query.sql) in [Schema](https://github.com/Ssimoes48/ELT-Project/tree/main/Schema) folder
 
 ## Resources 
 
