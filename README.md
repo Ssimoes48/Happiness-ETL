@@ -155,7 +155,7 @@ We felt these were important representations of our data set because they showed
 
 * Clone repository to your desktop 
 
-* Open `PgAdmin` and import `schema.sql` from [Schema](https://github.com/Ssimoes48/ELT-Project/tree/main/Schema) folder
+* Open `PgAdmin` and import [schema.sql](https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/schema.sql) from [Schema](https://github.com/Ssimoes48/ELT-Project/tree/main/Schema) folder
 
 * Run all [schema](https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/schema.sql) 
 
