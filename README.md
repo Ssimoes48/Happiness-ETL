@@ -119,7 +119,7 @@ When creating our schema, we assigned data types to all the columns based on the
 
 ## Load
 
-Within `PgAdmin` , we created tables based on our [schema](https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/schema.sql). Then we ran our ` df.to_sql( ) `  in `jupyter notebook` to import our clean database information into the new tables we made in `postgress` . We also assigned the restriction to certain fields NOT to pull the data if the column was `NULL` . 
+Within `PgAdmin` , we created tables based on our [schema](https://github.com/Ssimoes48/Happiness-ETL/blob/main/Schema/schema.sql). Then we ran our ` df.to_sql( ) `  in `jupyter notebook` to import our clean database information into the new tables we made in `postgress` . We also assigned the restriction to certain fields NOT to pull the data if the column was `NULL` . 
 
 Our schema also included constraints to make sure the data connected between tables correctly and on the `PRIMARY KEY` and `FOREIGN KEY` . 
 
@@ -127,7 +127,7 @@ Our schema also included constraints to make sure the data connected between tab
 
 ## Queries 
 
-After creating the databases, the following are some [queries](https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/query.sql)  the user may find useful.
+After creating the databases, the following are some [queries](https://github.com/Ssimoes48/Happiness-ETL/blob/main/Schema/query.sql)  the user may find useful.
 
 ### Query 1 
 
@@ -155,9 +155,9 @@ We felt these were important representations of our data set because they showed
 
 * Clone repository to your desktop 
 
-* Open `PgAdmin` and import [schema.sql](https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/schema.sql) from [Schema](https://github.com/Ssimoes48/ELT-Project/tree/main/Schema) folder
+* Open `PgAdmin` and import [schema.sql](https://github.com/Ssimoes48/Happiness-ETL/blob/main/Schema/schema.sql) from [Schema](https://github.com/Ssimoes48/Happiness-ETL/tree/main/Schema) folder
 
-* Run all [schema](https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/schema.sql) 
+* Run all [schema](https://github.com/Ssimoes48/Happiness-ETL/blob/main/Schema/schema.sql) 
 
 * Python environment needs the following dependencies to run notebooks: `sqlalchemy`, `pandas`, `psycopg2` 
 
@@ -165,7 +165,7 @@ We felt these were important representations of our data set because they showed
 
 * Open and run each file in `Jupiter Notebook` 
 
-* Once the tables are populated in `PgAdmin`, run the queries located in file called [query.sql](https://github.com/Ssimoes48/ELT-Project/blob/main/Schema/query.sql) in [Schema](https://github.com/Ssimoes48/ELT-Project/tree/main/Schema) folder
+* Once the tables are populated in `PgAdmin`, run the queries located in file called [query.sql](https://github.com/Ssimoes48/Happiness-ETL/blob/main/Schema/query.sql) in [Schema](https://github.com/Ssimoes48/Happiness-ETL/tree/main/Schema) folder
 
 ## Resources 
 
