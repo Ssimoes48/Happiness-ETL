@@ -92,15 +92,13 @@ To export to `SQL` we used the following code :
 
 ![Pop SQL](Images/pop_sql_jn.PNG)
 
-### ERD
+### Schema
 
 To organize our data sets we use an `Entity Relationship Diagram` (ERD) tool. We created sample tables and linked them together on their primary key which was Country Name. We then exported he schema into `PostgreSQL` to create our tables.
 
 When creating our schema, we assigned data types to all the columns. These included types like `VARCHAR` if the data was a word or `DECIMAL` if the data was a large number which included a decimal. The ‘Year’ column was assigned as an `INT` since it was only a 4-diget basic number. 
 
 ![ERD](Images/ERD.png)
-
-![ERD](Images/ERD_code.png)
 
 
 ## Load
