@@ -47,7 +47,7 @@ For our government type data, we web scraped the data from the below site:
 There are 193 countries in the world, however, our main Happiness Index CSV file included 153 counties that were surveyed. We chose these data sets because they all had the common field of Country Name.
 
 ## Transform
-We imported our data sets into `Jupyter Notebook` to manipulate and transform our datasets. We had to reformate and clean our CSV files so that they were readable, and the columns were consistent. We did this by renaming columns and comparing country names to ensure all data was callable in our `SQL` queries. We also removed null values in areas that would not have been meaningful.
+We imported our data sets into Jupyter Notebook to manipulate and transform our datasets. We had to reformate and clean our CSV files so that they were readable, and the columns were consistent. We did this by renaming columns and comparing country names to ensure all data was callable in our `Postgres` queries. We also removed null values in areas that would not have been meaningful.
 
 ### Countries Table
 
@@ -119,7 +119,7 @@ When creating our schema, we assigned data types to all the columns based on the
 
 ## Load
 
-Within `PgAdmin` , we created tables based on our [schema](https://github.com/Ssimoes48/Happiness-ETL/blob/main/Schema/schema.sql). Then we ran our ` df.to_sql( ) `  in `jupyter notebook` to import our clean database information into the new tables we made in `postgress` . We also assigned the restriction to certain fields NOT to pull the data if the column was `NULL` . 
+Within `pgAdmin` , we created tables based on our [schema](https://github.com/Ssimoes48/Happiness-ETL/blob/main/Schema/schema.sql). Then we ran our ` df.to_sql( ) `  in jupyter notebook to import our clean database information into the new tables we made in `postgress` . We also assigned the restriction to certain fields NOT to pull the data if the column was `NULL` . 
 
 Our schema also included constraints to make sure the data connected between tables correctly and on the `PRIMARY KEY` and `FOREIGN KEY` . 
 
@@ -155,17 +155,19 @@ We felt these were important representations of our data set because they showed
 
 * Clone [Happiness-ETL](https://github.com/Ssimoes48/Happiness-ETL.git) repository to your desktop 
 
-* Open `PgAdmin` and import [schema.sql](https://github.com/Ssimoes48/Happiness-ETL/blob/main/Schema/schema.sql) from [Schema](https://github.com/Ssimoes48/Happiness-ETL/tree/main/Schema) folder
+* Open `pgAdmin` and create happiness_db. 
+
+* Import [schema.sql](https://github.com/Ssimoes48/Happiness-ETL/blob/main/Schema/schema.sql) from [Schema](https://github.com/Ssimoes48/Happiness-ETL/tree/main/Schema) folder
 
 * Run all [schema](https://github.com/Ssimoes48/Happiness-ETL/blob/main/Schema/schema.sql) 
 
 * Python environment needs the following dependencies to run notebooks: `sqlalchemy`, `pandas`, `psycopg2` 
 
-* Within folder, create a file called ‘config.py’. In config.py file, user will need to create a variable called ` postgres_pwd = {password} ` whose value is equal to the users `postgres password` for `PgAdmin` . User will also need to create a variable for ` postgres_user = {user name} ` for user name in `PgAdmin`
+* Within Data_Cleaning folder, create a file called ‘config.py’. In config.py file, user will need to create a variable called ` postgres_pwd = {password} ` whose value is equal to the users `postgres password` for `pgAdmin` . User will also need to create a variable for ` postgres_user = {user name} ` for user name in `PgAdmin`
 
-* Open and run each file in `Jupiter Notebook` 
+* Open and run each file in Jupyter Notebook 
 
-* Once the tables are populated in `PgAdmin`, run the queries located in file called [query.sql](https://github.com/Ssimoes48/Happiness-ETL/blob/main/Schema/query.sql) in [Schema](https://github.com/Ssimoes48/Happiness-ETL/tree/main/Schema) folder
+* Once the database is populated, run the queries in pgAdmin. The file is called [query.sql](https://github.com/Ssimoes48/Happiness-ETL/blob/main/Schema/query.sql) in [Schema](https://github.com/Ssimoes48/Happiness-ETL/tree/main/Schema) folder
 
 ## Resources 
 
