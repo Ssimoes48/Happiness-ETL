@@ -43,7 +43,7 @@ CREATE TABLE "happiness_index" (
     "healthy_life_expectancy" DECIMAL   NOT NULL,
     "choice_freedom" DECIMAL   NOT NULL,
     "generosity" DECIMAL   NOT NULL,
-    "perceptions_of_corruption" DECIMAL   NOT NULL,
+    "perceptions_of_corruption" DECIMAL,
     "year" INT   NOT NULL,
     CONSTRAINT "pk_happiness_index" PRIMARY KEY (
         "country","year"
